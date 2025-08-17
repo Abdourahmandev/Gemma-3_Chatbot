@@ -1,0 +1,33 @@
+{
+  "name": "gemma3-chatbot",
+  "version": "1.0.0",
+  "description": "Gemma 3 ChatBot Desktop App",
+  "main": "electron-main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder",
+    "dist": "electron-builder --publish=never"
+  },
+  "build": {
+    "appId": "com.gemma3.chatbot",
+    "productName": "Gemma 3 ChatBot",
+    "directories": {
+      "output": "dist-electron"
+    },
+    "files": [
+      "electron-main.js",
+      "app.py",
+      "requirements.txt",
+      "venv/**",
+      "chat_history/**"
+    ],
+    "win": {
+      "target": "nsis",
+      "icon": "icon.ico"
+    }
+  },
+  "devDependencies": {
+    "electron": "^25.0.0",
+    "electron-builder": "^24.0.0"
+  }
+}
